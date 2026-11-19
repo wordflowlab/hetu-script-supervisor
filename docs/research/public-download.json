@@ -1,0 +1,8 @@
+{
+  "release": "https://github.com/wordflowlab/hetu-script-supervisor/releases/tag/v0.1.0",
+  "source_commit": "adb06003bf0aa4a1e3a37055d7089602400876d1",
+  "archive_sha256": "3a354dff0fc3568b2aa7c5fb0a6c7cadf5e7b1feb255009f14ad8f4b97bc5abb",
+  "package_sha256": "c7d2c3c11041ff19851d9fe85a48f28c74f972f965ed6547a3326e9a7431dfd0",
+  "files_byte_identical": 18,
+  "verified": true
+}
