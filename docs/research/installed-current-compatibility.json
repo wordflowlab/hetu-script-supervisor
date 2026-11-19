@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-19",
+  "core_version": "hetu 0.13.4",
+  "entry": "现有安装包独立CLI，未启动或覆盖GUI",
+  "plugin_id": "org.wordflowlab.script-supervisor",
+  "package_sha256": "c7d2c3c11041ff19851d9fe85a48f28c74f972f965ed6547a3326e9a7431dfd0",
+  "fixed_ref": {
+    "object_id": "ext_75efbb3b-d862-41e7-879c-7056dda32bb4",
+    "revision": 5,
+    "sha256": "bc796b4e6f841ec9ab0e0610e7ad7d810924fe3cefda3ba1b511cb1aa9e6236a"
+  },
+  "actual_capabilities_and_fixed_project_read": true,
+  "scope": "当前安装版兼容发现和固定成果读取；完整专业旅程仍由正式0.12.6证据证明"
+}
