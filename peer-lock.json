@@ -1,0 +1,20 @@
+{
+  "peers": [
+    {
+      "repository": "wordflowlab/hetu-language-studio",
+      "commit": "d7ba3beb4eac769e6ed29381a03bafa7ae0138ff",
+      "package_sha256": "c64913f4ace3eef524924e784b1e8f600a96173bedff08c2b107795cd9c54a12"
+    },
+    {
+      "repository": "wordflowlab/hetu-musical-studio",
+      "commit": "9cc536b5534361c7d10279d72956211c7cc8feae",
+      "package_sha256": "70f42fb31863b5be091c265d6415502573682e0c1cc52e13b510f7c58e2d6b85"
+    },
+    {
+      "repository": "wordflowlab/hetu-murder-mystery",
+      "commit": "574e514f723698669ba85a7f5a288968c02f2aac",
+      "package_sha256": "02fba8172da72f7be8a821486afd9ee72cb8b05694801aef071376a7c22b172f"
+    }
+  ],
+  "scope": "只固定联合验收，不成为专业包运行依赖"
+}

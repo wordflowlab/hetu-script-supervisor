@@ -1,0 +1,81 @@
+name: Official host acceptance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: installed-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  installed:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: plugin
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: limecloud/hetu
+          ref: b75293837aaa220803b9dc964ba72b8646fa7244
+          path: host
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-language-studio
+          ref: d7ba3beb4eac769e6ed29381a03bafa7ae0138ff
+          path: hetu-language-studio
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-musical-studio
+          ref: 9cc536b5534361c7d10279d72956211c7cc8feae
+          path: hetu-musical-studio
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: wordflowlab/hetu-murder-mystery
+          ref: 574e514f723698669ba85a7f5a288968c02f2aac
+          path: hetu-murder-mystery
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '25.0.0'
+      - name: Install dependencies without compiling host
+        run: |
+          (cd host && npm ci)
+          (cd plugin && npm ci)
+          (cd hetu-language-studio && npm ci && npm run package)
+          (cd hetu-musical-studio && npm ci && npm run package)
+          (cd hetu-murder-mystery && npm ci && npm run package)
+      - name: Install artifact browser
+        working-directory: plugin
+        run: npx playwright install chromium
+      - name: Build and verify fixed plugin only
+        working-directory: plugin
+        run: |
+          npm run build
+          npm run check
+          npm run test:unit
+          node scripts/verify-docs.mjs
+          npm run package
+      - name: Verify signed host and complete professional workflows
+        working-directory: plugin
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/accept-installed.py
+      - name: Retain professional results and actual work surfaces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-installed-acceptance
+          path: |
+            plugin/output/installed-acceptance/*.json
+            plugin/output/installed-acceptance/*.txt
+            plugin/output/installed-acceptance/*.html
+            plugin/output/installed-acceptance/*.png
+            plugin/output/installed-acceptance/*.log
+            plugin/test-results/
+          if-no-files-found: ignore
+          retention-days: 30
