@@ -367,7 +367,7 @@ function App() {
       {error && (
         <div role="alert">
           {error}
-          {pending && (
+          {pending && !editing && (
             <button onClick={() => void run(recover)}>回读原操作</button>
           )}
         </div>
