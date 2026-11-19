@@ -1,0 +1,70 @@
+{
+  "retrieved_on": "2026-11-19",
+  "sources": [
+    {
+      "repository": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO",
+      "commit": "bad7ab5a40ac1a95d9d78a87c95a688d8b57cf28",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "fc636466b740c636d6ceb488e00d2b5a95f8fdb5c46de142b2a227fda928aeca",
+          "read_lines": [
+            1,
+            55
+          ]
+        },
+        {
+          "path": "LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "read_lines": [
+            1,
+            25
+          ]
+        },
+        {
+          "path": "src/opentime/rationalTime.h",
+          "sha256": "1ee199836bd25acc56ec8c3fabe0a8dc76920d86e3bd76f3258bfec591e2249d",
+          "read_lines": [
+            1,
+            95
+          ]
+        }
+      ],
+      "use": "只读研究，未运行上游脚本或复制实现"
+    },
+    {
+      "repository": "https://github.com/trelby/trelby",
+      "commit": "ded2305b7e2938fbcfc9a245c6f00947d8edc509",
+      "license": "GPL-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "80b22462c755049afb21bd324ed1ba22e413ad253ac3119481eb11bca958d712",
+          "read_lines": [
+            1,
+            45
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "df84246204e3c54cd24aebbc23714235f5fc41d754d53b65444a2afbf070130f",
+          "read_lines": [
+            1,
+            20
+          ]
+        },
+        {
+          "path": "trelby/screenplay.py",
+          "sha256": "b36855a6acba12c6e92a657987056af8b4469b2e786d28a32a8822034d50e314",
+          "read_lines": [
+            1,
+            65
+          ]
+        }
+      ],
+      "use": "只读研究，未运行上游脚本或复制实现"
+    }
+  ],
+  "adoption": "OpenTimelineIO将媒体引用、时间范围和时率分开，Trelby区分剧本结构与排版。本包独立实现整数帧有理时长及声明式连续性比较，不复制GPL源码，不声称完整OTIO或drop-frame兼容。"
+}

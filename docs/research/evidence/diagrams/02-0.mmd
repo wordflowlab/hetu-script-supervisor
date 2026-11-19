@@ -1,0 +1,7 @@
+erDiagram
+ PROJECT ||--o{ SCENE : owns
+ SCENE ||--o{ SHOT : organizes
+ SHOT ||--o{ TAKE : records
+ TAKE ||--o{ OBSERVATION : preserves
+ MATCH }o--o{ OBSERVATION : compares
+ SHOT ||--o{ SELECTION : fixes

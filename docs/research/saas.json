@@ -1,0 +1,24 @@
+{
+  "retrieved_on": "2026-11-19",
+  "pages": [
+    {
+      "name": "ScriptE",
+      "url": "https://www.scriptesystems.com/",
+      "status": "200",
+      "exit_code": 0,
+      "sha256": "5d90ab5f8a958e9b0e879c74dd22fad5387dfd575495b17eb00917cf00c110ba",
+      "title": "Digital Film and TV Continuity and Scheduling Software",
+      "scope": "公开页面；未登录、未执行产品业务"
+    },
+    {
+      "name": "StudioBinder",
+      "url": "https://www.studiobinder.com/script-supervisor/",
+      "status": "403",
+      "exit_code": 0,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "title": "403 Forbidden",
+      "scope": "公开页面；未登录、未执行产品业务"
+    }
+  ],
+  "limits": "可访问页面不等于已体验产品；HTTP失败保留原状态。"
+}

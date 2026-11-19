@@ -1,0 +1,605 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format_version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 170
+    },
+    "brief": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 8000
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "source_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+          },
+          "byte_start": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "byte_end": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 18000
+          },
+          "attribution": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          }
+        },
+        "required": [
+          "id",
+          "source_index",
+          "byte_start",
+          "byte_end",
+          "quote",
+          "attribution"
+        ]
+      },
+      "maxItems": 100
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "story_day": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 15000
+          },
+          "role_names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 170
+            },
+            "maxItems": 30
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "^[A-Za-z0-9_-]+$"
+            },
+            "maxItems": 30
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "order",
+          "story_day",
+          "location",
+          "body",
+          "role_names",
+          "evidence_ids"
+        ]
+      },
+      "maxItems": 100
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          }
+        },
+        "required": [
+          "id",
+          "scene_id",
+          "label",
+          "order",
+          "action"
+        ]
+      },
+      "maxItems": 200
+    },
+    "takes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "shot_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999
+          },
+          "mode": {
+            "enum": [
+              "manual_record",
+              "agent_simulated"
+            ]
+          },
+          "roll": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "frame_in": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "frame_out": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000
+          },
+          "fps_num": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 120000
+          },
+          "fps_den": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "declaration": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "asset_source_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "shot_id",
+          "number",
+          "mode",
+          "roll",
+          "frame_in",
+          "frame_out",
+          "fps_num",
+          "fps_den",
+          "declaration",
+          "asset_source_index"
+        ]
+      },
+      "maxItems": 300
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "take_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "category": {
+            "enum": [
+              "costume",
+              "prop",
+              "action",
+              "eyeline",
+              "other"
+            ]
+          },
+          "phase": {
+            "enum": [
+              "in",
+              "out"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "note": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 3000
+          },
+          "supersedes_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "take_id",
+          "subject",
+          "category",
+          "phase",
+          "value",
+          "note",
+          "supersedes_id"
+        ]
+      },
+      "maxItems": 500
+    },
+    "matches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 170
+          },
+          "from_take_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "from_phase": {
+            "enum": [
+              "in",
+              "out"
+            ]
+          },
+          "to_take_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "to_phase": {
+            "enum": [
+              "in",
+              "out"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "subject": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 170
+                },
+                "category": {
+                  "enum": [
+                    "costume",
+                    "prop",
+                    "action",
+                    "eyeline",
+                    "other"
+                  ]
+                },
+                "intentional": {
+                  "enum": [
+                    true,
+                    false
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 3000
+                }
+              },
+              "required": [
+                "subject",
+                "category",
+                "intentional",
+                "reason"
+              ]
+            },
+            "maxItems": 50
+          },
+          "basis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "from_take_id",
+          "from_phase",
+          "to_take_id",
+          "to_phase",
+          "items",
+          "basis_sha256"
+        ]
+      },
+      "maxItems": 200
+    },
+    "selections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "shot_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "take_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "basis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "shot_id",
+          "take_id",
+          "reason",
+          "basis_sha256"
+        ]
+      },
+      "maxItems": 200
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "target_kind": {
+            "enum": [
+              "scene",
+              "shot",
+              "take",
+              "match",
+              "selection"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "target_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "origin": {
+            "enum": [
+              "author",
+              "agent"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "status": {
+            "enum": [
+              "open",
+              "resolved"
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 5000
+          }
+        },
+        "required": [
+          "id",
+          "target_kind",
+          "target_id",
+          "target_sha256",
+          "origin",
+          "comment",
+          "status",
+          "resolution"
+        ]
+      },
+      "maxItems": 200
+    },
+    "basis_refs": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "owner_plugin_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "object_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "owner_plugin_id",
+          "object_id",
+          "revision",
+          "sha256"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format_version",
+    "title",
+    "brief",
+    "evidence",
+    "scenes",
+    "shots",
+    "takes",
+    "observations",
+    "matches",
+    "selections",
+    "notes",
+    "basis_refs"
+  ]
+}
