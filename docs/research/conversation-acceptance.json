@@ -1,0 +1,195 @@
+{
+  "recorded_at": "2026-11-19",
+  "entry": "当前Codex通过正式0.12.6 CLI操作；既有0.12.3 MCP发现另行登记",
+  "host_version": "0.12.6",
+  "work_ref": {
+    "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+    "kind": "novel",
+    "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+  },
+  "package_sha256": "c7d2c3c11041ff19851d9fe85a48f28c74f972f965ed6547a3326e9a7431dfd0",
+  "original": {
+    "object_id": "ext_75efbb3b-d862-41e7-879c-7056dda32bb4",
+    "revision": 1,
+    "sha256": "5d9540ffed5521ba419a93043ac285d189c10ce86134510533901be374aad6c6"
+  },
+  "revised": {
+    "object_id": "ext_75efbb3b-d862-41e7-879c-7056dda32bb4",
+    "revision": 5,
+    "sha256": "bc796b4e6f841ec9ab0e0610e7ad7d810924fe3cefda3ba1b511cb1aa9e6236a"
+  },
+  "original_operation_key": "creative-specialist-script-supervisor-project-20261119",
+  "source_ref": {
+    "kind": "resource",
+    "work_ref": {
+      "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+      "kind": "novel",
+      "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+    },
+    "resource_id": "resource_80a855af-a4cc-40e7-9ac9-b9afc9dc3356",
+    "revision": 1,
+    "sha256": "65ea03fa141cf2314d3564200155691be5965e9ef55a00714150ae3a58b5f911"
+  },
+  "original_operation_preserved": true,
+  "previous_revision_preserved": true,
+  "old_snapshot_preserved": null,
+  "other_states_preserved": 40,
+  "existing_objects_read": 0,
+  "checks_after": {
+    "basis_ref": {
+      "object_id": "ext_75efbb3b-d862-41e7-879c-7056dda32bb4",
+      "owner_plugin_id": "org.wordflowlab.script-supervisor",
+      "revision": 4,
+      "sha256": "9003e94f8efed22ade3fb2f6890d468735289610aa5211b61d1425578323697f"
+    },
+    "comparisons": [
+      {
+        "items": [
+          {
+            "category": "prop",
+            "from": {
+              "category": "prop",
+              "id": "obs-a",
+              "note": "全景出点记录",
+              "phase": "out",
+              "subject": "来信",
+              "supersedes_id": null,
+              "take_id": "take-a",
+              "value": "左手"
+            },
+            "intentional": false,
+            "reason": "",
+            "result": "matches",
+            "subject": "来信",
+            "to": {
+              "category": "prop",
+              "id": "correction",
+              "note": "复核原记录后的更正声明",
+              "phase": "in",
+              "subject": "来信",
+              "supersedes_id": "obs-b",
+              "take_id": "take-b",
+              "value": "左手"
+            }
+          },
+          {
+            "category": "costume",
+            "from": null,
+            "intentional": false,
+            "reason": "",
+            "result": "unknown",
+            "subject": "林溪",
+            "to": null
+          }
+        ],
+        "match": {
+          "basis_sha256": "773d4c115c1f29d0eaa81e62cfad100bffd60c49358a301f1849a310f7e139f1",
+          "from_phase": "out",
+          "from_take_id": "take-a",
+          "id": "envelope",
+          "items": [
+            {
+              "category": "prop",
+              "intentional": false,
+              "reason": "",
+              "subject": "来信"
+            },
+            {
+              "category": "costume",
+              "intentional": false,
+              "reason": "",
+              "subject": "林溪"
+            }
+          ],
+          "title": "信封接点",
+          "to_phase": "in",
+          "to_take_id": "take-b"
+        },
+        "note": "只比较明确登记的状态，未登记观察或语义一致性不自动判断。",
+        "stale": false
+      }
+    ],
+    "note": "缺观察返回unknown；差异为明确值比较，不认证真实画面穿帮。",
+    "project_ref": {
+      "object_id": "ext_75efbb3b-d862-41e7-879c-7056dda32bb4",
+      "revision": 4,
+      "sha256": "9003e94f8efed22ade3fb2f6890d468735289610aa5211b61d1425578323697f"
+    },
+    "stale_match_ids": [],
+    "stale_note_ids": [
+      "note"
+    ],
+    "stale_selection_ids": [
+      "selected"
+    ],
+    "unattached_take_ids": [
+      "take-a",
+      "take-b"
+    ]
+  },
+  "upstream_basis": [
+    {
+      "owner_plugin_id": "org.wordflowlab.language-studio",
+      "object_id": "ext_0ee7c0d8-ad63-4481-8abc-71da7ba18605",
+      "revision": 4,
+      "sha256": "99b458d4825db2b91fac15cac04ba905b4fe206f002d27bb3e89974ed2a32803"
+    },
+    {
+      "owner_plugin_id": "org.wordflowlab.musical-studio",
+      "object_id": "ext_b2547580-8aee-413e-9faf-6112f2cf3570",
+      "revision": 6,
+      "sha256": "8cb2238ad24d71c155edf4553c8d303a06e4e5e2d28248b9cd795283353c2e08"
+    },
+    {
+      "owner_plugin_id": "org.wordflowlab.murder-mystery",
+      "object_id": "ext_34debb9b-d046-4619-9f8d-558a02795f4a",
+      "revision": 17,
+      "sha256": "528e57943c4464310edaad4e8145f645e6b26aeb0eac11c78a796eaf70f66705"
+    }
+  ],
+  "adopted": false,
+  "finalized": false,
+  "fixture": "原创虚构工程，模拟不代表真人测本、实际拍摄或演唱认证",
+  "original_work_fixed_ref": {
+    "revision_ref": {
+      "revision": 1
+    },
+    "sha256": "6577f6a191a8b6889c1c769db9f18e6afeb47e07359c92b47f259514ad33aaaf",
+    "work_ref": {
+      "kind": "novel",
+      "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac",
+      "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875"
+    }
+  },
+  "original_work_record_unchanged": true,
+  "continuation": {
+    "task_kind": "chapter_draft",
+    "fixed_input_refs": [
+      {
+        "kind": "resource",
+        "work_ref": {
+          "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+          "kind": "novel",
+          "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+        },
+        "resource_id": "resource_80a855af-a4cc-40e7-9ac9-b9afc9dc3356",
+        "revision": 1,
+        "sha256": "65ea03fa141cf2314d3564200155691be5965e9ef55a00714150ae3a58b5f911"
+      },
+      {
+        "kind": "resource",
+        "work_ref": {
+          "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+          "kind": "novel",
+          "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+        },
+        "resource_id": "resource_a3b90e98-1275-4e15-86e0-a97a914d9a6b",
+        "revision": 1,
+        "sha256": "71130efc95dbde243abcdd0521d7a071b61320a1745d928d8be944fedb249ddf"
+      }
+    ],
+    "context_full_bytes_verified": true,
+    "candidate_saved_and_read": true,
+    "adopted": false
+  }
+}
